@@ -11,21 +11,7 @@ on:
 
 jobs:
   build:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        include:
-          os: macos-latest
-            env:
-              - TARGET: x86_64-apple-darwin
-              - COMPILER: clang
-              - LINKER: clang
-
-          os: ubuntu-latest
-            env:
-              - TARGET: armv7-unknown-linux-musleabihf
-              - COMPILER: arm-linux-gnueabihf-gcc-5
-              - LINKER: gcc-5-arm-linux-gnueabihf
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
